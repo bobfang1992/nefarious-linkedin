@@ -27,6 +27,81 @@ function saveJson(data, filename) {
   a.dispatchEvent(e)
 }
 
+function decode(str) {
+    if (!str) { return str; }
+
+    var mapping = {
+        'r': 'a',
+        'O': 'a',
+        'x': 'b',
+        'L': 'b',
+        'G': 'c',
+        'I': 'C',
+        'w': 'd',
+        'v': 'd',
+        'f': 'e',
+        'P': 'E',
+        'B': 'F',
+        'H': 'f',
+        'U': 'g',
+        'k': 'G',
+        'F': 'h',
+        'n': 'H',
+        'T': 'i',
+        'D': 'i',
+        'u': 'k',
+        'd': 'l',
+        'a': 'L',
+        'h': 'm',
+        'A': 'M',
+        'X': 'n',
+        'W': 'o',
+        'c': 'O',
+        'o': 'P',
+        'S': 'p',
+        'M': 'q',
+        'l': 'r',
+        's': 'r',
+        'j': 'S',
+        'C': 's',
+        'Y': 't',
+        'y': 't',
+        'R': 'u',
+        'V': 'u',
+        'K': 'v',
+        'Q': 'W',
+        'm': 'x',
+        'Z': 'y',
+        'i': 'z',
+    };
+
+    var decoded = '';
+
+    str.split('').forEach(function (char) {
+      if (mapping[char] ) {
+        decoded += mapping[char];
+      } else {
+        decoded += char;
+      }
+    });
+
+    return decoded;
+}
+
+function compare(a, b) {
+  const genreA = decode(a.name).toUpperCase();
+  const genreB = decode(b.name).toUpperCase();
+
+  let comparison = 0;
+
+  if (genreA > genreB) {
+    comparison = 1;
+  } else if (genreA < genreB) {
+    comparison = -1;
+  }
+  return comparison;
+}
+
 function removeLoader() {
   var loadingContainer = document.querySelector('.loading-container');
 
@@ -43,6 +118,27 @@ function showDataView(data) {
   document.querySelector('.download').addEventListener('click', function () {
     saveJson(data, "linkedin-" + (new Date().getTime()) + ".json");
     return false;
+  });
+
+  data.Metadata.ext.sort(compare).forEach(function (e) {
+    var li = document.createElement("li");
+
+    if (e.path && e.path[0]) {
+      // Append a link to the webstore description.
+      var extensionId = e.path[0].split("/")[0];
+
+      var link = document.createElement("a");
+      link.innerText = decode(e.name);
+      link.target = "_blank";
+      link.href = "https://chrome.google.com/webstore/detail/" + extensionId;
+
+      li.appendChild(link);
+    } else {
+      // No extension ID is know, simply append the name.
+      li.innerText = decode(e.name);
+    }
+
+    document.querySelector("ul").appendChild(li);
   });
 
   document.querySelector(".data").classList.remove("hidden");
