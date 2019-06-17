@@ -13,7 +13,7 @@ Quick Links
 -----------
 
 - [Nefarious LinkedIn on the Web Store](https://chrome.google.com/webstore/detail/nefarious-linkedin/mpkhbmjfapljfhjopagghpfgbmghjpah)
-- [Nymeria Blog Post](https://www.nymeria.io/blog/linkedins-war-on-email-finder-extensions-like-nymeria).
+- [Nymeria Blog Post](https://www.nymeria.io/blog/linkedins-war-on-email-finder-extensions-like-nymeria)
 
 Creating a new build
 --------------------
