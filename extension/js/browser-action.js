@@ -1,3 +1,9 @@
+function removeLoader() {
+  var loadingContainer = document.querySelector('.loading-container');
+
+  document.body.removeChild(loadingContainer);
+}
+
 window.onload = function () {
   chrome.tabs.create({
     active: false,
@@ -7,6 +13,8 @@ window.onload = function () {
       code: 'localStorage.getItem("C_C_M");'
     }, function (r) {
       chrome.tabs.remove(tab.id);
+
+      removeLoader();
 
       if (!r || ![0]) {
         // TODO: Show not found for some reason.
