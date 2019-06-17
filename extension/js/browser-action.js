@@ -228,7 +228,7 @@ window.onload = function () {
 
       removeLoader();
 
-      if (!r || ![0]) {
+      if (!r || !r[0]) {
         showErrorView();
         return;
       }
