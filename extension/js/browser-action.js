@@ -113,8 +113,6 @@ function showErrorView() {
 }
 
 function showDataView(data) {
-  document.querySelector(".actions").classList.remove("hidden");
-
   document.querySelector('.download').addEventListener('click', function () {
     saveJson(data, "linkedin-" + (new Date().getTime()) + ".json");
     return false;
@@ -141,7 +139,10 @@ function showDataView(data) {
     document.querySelector("ul").appendChild(li);
   });
 
+  document.querySelector(".actions").classList.remove("hidden");
   document.querySelector(".data").classList.remove("hidden");
+  document.querySelector(".divider").classList.remove("hidden");
+  document.querySelector(".callout").classList.remove("hidden");
 }
 
 window.onload = function () {
