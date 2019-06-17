@@ -8,7 +8,7 @@
     ],
     "browser_action": {
         "default_icon": "/images/icon.png",
-        "default_title": "Open to see scan LinkedIn's stored extension list!",
+        "default_title": "Open anywhere to see which extensions LinkedIn is looking for!",
         "default_popup": "/html/index.html"
     },
     "icons": {
