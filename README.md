@@ -1,6 +1,10 @@
 Nefarious LinkedIn
 ==================
 
+<p align="center">
+  <img src="./.demo.gif" alt="A demo showing Nefarious LinkedIn's extension in action.">
+</p>
+
 This extension enables you to determine which extensions LinkedIn is scanning
 your web browser for. This tool was created to accompany an original blog post
 about this subject (check links below for more details).
