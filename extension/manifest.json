@@ -1,8 +1,8 @@
 {
     "name": "Nefarious LinkedIn",
-    "description": "Figure out what extensions LinkedIn is scaning you for.",
+    "description": "This extension enables you to find out which extensions LinkedIn is scanning your browser for.",
     "homepage_url": "https://github.com/prophittcorey/nefarious-linkedin",
-    "version": "2.0",
+    "version": "2.0.1",
     "permissions": [
       "*://*.linkedin.com/*"
     ],
