@@ -1,18 +1,18 @@
 {
-    "name": "Nefarious LinkedIn",
-    "description": "This extension enables you to find out which extensions LinkedIn is scanning your browser for.",
-    "homepage_url": "https://github.com/prophittcorey/nefarious-linkedin",
-    "version": "2.0.1",
-    "permissions": [
-      "*://*.linkedin.com/*"
+  "name": "Nefarious LinkedIn",
+  "description": "This extension enables you to find out which extensions LinkedIn is scanning your browser for.",
+  "homepage_url": "https://github.com/prophittcorey/nefarious-linkedin",
+  "version": "2.0.1",
+  "permissions": [
+    "*://*.linkedin.com/*"
     ],
     "browser_action": {
-        "default_icon": "/images/icon.png",
-        "default_title": "Open anywhere to see which extensions LinkedIn is looking for!",
-        "default_popup": "/html/index.html"
+      "default_icon": "/images/icon.png",
+      "default_title": "Open anywhere to see which extensions LinkedIn is looking for!",
+      "default_popup": "/html/index.html"
     },
     "icons": {
-        "256": "/images/icon.png"
+      "256": "/images/icon.png"
     },
     "manifest_version": 2
 }
